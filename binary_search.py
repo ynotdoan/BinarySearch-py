@@ -1,20 +1,18 @@
 
 class binary_search():
-  def __init__(self, k, value):
-    self.value = value
-    self.k = []
+  def __init__(self, l, r, mid, k, value):
+    self.l = 0
+    self.r = len(k) - 1
+    self.mid = (l + r) / 2
     
-  def binary_search(self, k, value):
-    left = 0
-    right = len(k) - 1
-    mid = (left + right) / 2
-    
-    while (value != k[mid]):
-      mid = (left + right) / 2
-      
-      if (value < k[mid]):
-        right = mid - 1
-      elif (value > k[mid]):
-        left = mid + 1
+  def binary_search(self, l, r, mid, k, value):
+    if (value < k[mid]):
+      r = mid - 1
+      return binary_search(l, r, mid, k, value)
+    elif (value > k[mid]):
+      l = mid + 1
+      return binary_search(l, r, mid, k, value)
+    elif (value == k[mid]):
+      return True
     
     return -1
