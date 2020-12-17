@@ -1,21 +1,28 @@
+nums = [1, 2, 12, 41, 51, 122, 91]
+value = 1
+print (sorted(nums))
 
-class binary_search():
-  def __init__(self, k, value):
-    self.l = 0
-    self.r = len(k) - 1
-    self.mid = (self.l + self.r) / 2
-    self.k = k
-    self.value = value
+l = 0
+r = len(nums) - 1
+print (l, r)
+mid = (l + r) // 2
+
+while (value != nums[mid]):
+  mid = (l + r) // 2
+  print (f"mid{mid}")
+  if (value < nums[mid]):
+    r = mid - 1
+    print ("1")
+    print (f"index v {nums[mid]}")
     
-  def binary_search(self, l, r, mid, k, value):
-    if (value < k[mid]):
-      self.r = mid - 1
-      binary_search(k, value)
-    elif (value > k[mid]):
-      self.l = mid + 1
-      binary_search(k, value)
-    elif (value == k[mid]):
-      print ("test")
-      return 1
-    
-    return -1
+  elif (value > nums[mid]):
+    l = mid + 1
+    print ("2")
+    print (f"index v {nums[mid]}")
+
+  # elif (value == nums[mid]):
+  #   print (nums[mid])
+  #   print ("yes")
+
+print (f"***{value} {mid} {nums[mid]}")
+print ("yes")
