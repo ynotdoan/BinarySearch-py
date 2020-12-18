@@ -1,6 +1,6 @@
 
 from binary_search import BinarySearch as BS
 
-nums = [2, 1, 12, 41, 51, 122, 91]
-res = BS(nums, 1)
-res.binary_search()
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+res = BS(nums, 12)
+res.b_search()
