@@ -9,8 +9,11 @@ class BinarySearchTest(unittest.TestCase):
   Test cases for class BinarySearch.
   '''
   def setUp(self):
-    self.search = b.BinarySearch(nums, 42)
+    self.search = b.BinarySearch(nums, 5)
     
   def test_binary_search(self):
     self.search.b_search()
-    self.assertEqual(self.search, 1)
+    self.assertTrue(self.search)
+    
+if __name__ == "__main__":
+  unittest.main()
