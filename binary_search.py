@@ -28,12 +28,9 @@ class BinarySearch():
       elif (self.value > self.k[mid]):
         self.l = mid + 1
       
-      # if a value that equals to current mid value is found, break from loop
+      # if a value that equals to current mid value is found, returns True
       elif (self.value == self.k[mid]):
-        break
+        return True
     
-    # returns True/False depending on if value was found   
-    if (self.value == self.k[mid]):
-      return True
-    else:
-      return False
+    # if value is not found, returns False
+    return False
